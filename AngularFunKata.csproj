@@ -58,6 +58,7 @@
     <Content Include="bower.json" />
     <Content Include="build.config.js" />
     <Content Include="Gruntfile.js" />
+    <Content Include="Index.html" />
     <Content Include="module.prefix" />
     <Content Include="module.suffix" />
     <Content Include="package.json" />
