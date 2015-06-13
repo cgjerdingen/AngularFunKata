@@ -2,6 +2,7 @@
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
+<<<<<<< HEAD
 describe('my app', function() {
 
   beforeEach(function() {
@@ -43,3 +44,5 @@ describe('my app', function() {
 
   });
 });
+=======
+>>>>>>> d6a9f7937cd2278f87ce2c9e2d3a0f083d904aa4
