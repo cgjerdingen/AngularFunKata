@@ -47,8 +47,8 @@
                             <div class="badge badge-inverse">
                                 <div> {{session.upVoteCount}}</div>
                             </div>
-                            <div class="votingButton">
-                                <i class="icon-chevron-down" ng-click="downVoteSession(session)"></i>
+                            <div class="votingButton" ng-click="downVoteSession(session)">
+                                <i class="icon-chevron-down"></i>
                             </div>
                         </div>
                         <div class="well span9">
@@ -56,7 +56,7 @@
                             <h6 style="margin-top:-10px;">{{session.creatorName}}</h6>
                             <span>Duration: {{session.duration}}</span><br />
                             <span>Level: {{session.level}}</span>
-                            <p>{{session.abstr}}</p>
+                            <p>{{session.abstract}}</p>
                         </div>
                     </div>
                 </li>
