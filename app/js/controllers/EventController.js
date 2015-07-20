@@ -1,8 +1,11 @@
 ﻿'use strict';
 
 // controller starts with an empty scope
-eventsApp.controller('EventController',
-    function EventController($scope) {
+eventsApp.controller('EventController', ['$scope', '$sce', 
+    function EventController($scope, $sce) {
+
+        $scope.snippet = '<span style="color:red">hi there</span>';
+        $scope.snippetUnsafe = $sce.trustAsHtml($scope.snippet);
         $scope.event = {
             name: 'Angular Boot Camp Training Event',
             date: '01/01/2015',
@@ -40,7 +43,8 @@ eventsApp.controller('EventController',
                     upVoteCount: 0
                 }
             ]
-        }
+        };
+
         $scope.upVoteSession = function(session) {
             session.upVoteCount++;
         };
@@ -48,5 +52,7 @@ eventsApp.controller('EventController',
         $scope.downVoteSession = function(session) {
             session.upVoteCount--;
         };
+        
+
     }
-);
+]);
