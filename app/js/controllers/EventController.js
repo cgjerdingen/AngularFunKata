@@ -6,9 +6,10 @@ eventsApp.controller('EventController', ['$scope', '$sce',
 
         $scope.snippet = '<span style="color:red">hi there</span>';
         $scope.snippetUnsafe = $sce.trustAsHtml($scope.snippet);
+        $scope.sortorder = 'name'
         $scope.event = {
             name: 'Angular Boot Camp Training Event',
-            date: '01/01/2015',
+            date: 1420092000000,
             time: '11:20 am',
             location: {
                 address: '1925 South 3rd St',
@@ -27,7 +28,7 @@ eventsApp.controller('EventController', ['$scope', '$sce',
                     upVoteCount: 0
                 },
                 {
-                    name: 'Master angularjs-logoScope',
+                    name: 'Master Angular Scope',
                     creatorName: 'Guy Gaskin',
                     duration: '1.5 hrs',
                     level: '100',

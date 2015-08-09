@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!-- script module that runs this page -->
 <html lang="en" ng-app="eventsApp">
 <head>
@@ -26,8 +26,8 @@
             <div ng-bind-html="snippet">some title</div>
             <div class="row">
                 <div class="span3">
-                    <div><strong>Date:</strong>{{event.date}}</div>
-                    <div><strong>Time:</strong>{{event.time}}</div>
+                    <div><strong>Date:</strong> {{event.date | date:'longDate'}}</div>
+                    <div><strong>Time:</strong> {{event.time}}</div>
                 </div>
                 <div class="span4">
                     <address>
@@ -37,9 +37,11 @@
                     </address>
                 </div>
             </div>
+            <div>{{ {a:3, b:'hi', c:{aa:35} } | json  }}</div>
+            <hr />
             <h3>Sessions</h3>
             <ul class="thumbnails">
-                <li ng-repeat="session in event.sessions">
+                <li ng-repeat="session in event.sessions | orderBy:vote">
                     
                     <div class="row session">
                         <div class="span0 well votingWidget">
