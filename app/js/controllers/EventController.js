@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 // controller starts with an empty scope
-eventsApp.controller('EventController', ['$scope', '$sce', 'eventData'
+eventsApp.controller('EventController', ['$scope', '$sce', 'eventData',
     function EventController($scope, $sce, eventData) {
 
         $scope.sortorder = 'name';

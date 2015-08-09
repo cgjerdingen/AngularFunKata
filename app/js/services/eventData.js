@@ -1,5 +1,3 @@
-'use strict';
-
 eventsApp.factory('eventData', function() {
 	return {
 		event: {
@@ -42,7 +40,7 @@ eventsApp.factory('eventData', function() {
                     upVoteCount: 0
                 }
             ] //end session array
-        }; //end event
+        } //end event
 	}; //end return
 });
  
