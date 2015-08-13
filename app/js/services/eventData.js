@@ -1,9 +1,17 @@
 eventsApp.factory('eventData', function($resource) {
+    var resource = $resource('/data/event/:id', {id:'@id'});
     return {
         getEventData: function() {
-            return $resource('/data/event/:id', {id:'@id'}).get({id:1});
+
+            // usually the id is passed in from a request, here it is just hard coded
+            return resource.get({id:1});
+        },
+        save: function(event) {
+            var d = new Date();
+            event.id = d.getTime();
+            return resource.save(event);
         }
-    }
+    };
 
 });
    
