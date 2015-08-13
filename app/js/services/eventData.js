@@ -1,19 +1,27 @@
-eventsApp.factory('eventData', function($http, $q) {
-	return {
-            getEventData: function() {
-                var deferred = $q.defer();
+eventsApp.factory('eventData', function($resource) {
+    return {
+        getEventData: function() {
+            return $resource('/data/event/:id', {id:'@id'}).get({id:1});
+        }
+    }
 
-                $http({method: 'GET', url: '/data/event/1'}).
-                    success(function (data, status, headers, config) {
-                        //$log.info(data, status, headers(), config);
-                        deferred.resolve(data);
-                    }).
-                    error(function (data, status, headers, config) {
-                        //$log.warn(data, status, headers(), config);
-                        deferred.reject(status);
-                    });
-                return deferred.promise;
-            }
+});
+   
+	// return {
+ //            getEventData: function() {
+ //                var deferred = $q.defer();
+
+ //                $http({method: 'GET', url: '/data/event/1'}).
+ //                    success(function (data, status, headers, config) {
+ //                        //$log.info(data, status, headers(), config);
+ //                        deferred.resolve(data);
+ //                    }).
+ //                    error(function (data, status, headers, config) {
+ //                        //$log.warn(data, status, headers(), config);
+ //                        deferred.reject(status);
+ //                    });
+ //                return deferred.promise;
+ //            }
 
 
 
@@ -59,6 +67,4 @@ eventsApp.factory('eventData', function($http, $q) {
                 }
             ] //end session array
         } //end event*/
-	}; //end return
-});
- 
+    // }; //end return

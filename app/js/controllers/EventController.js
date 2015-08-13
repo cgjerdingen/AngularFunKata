@@ -6,15 +6,18 @@ eventsApp.controller('EventController', ['$scope', '$sce', 'eventData',
 
         $scope.sortorder = 'name';
 
+
+        $scope.event = eventData.getEventData();
+
         //$scope.snippet = '<span style="color:red">hi there</span>';
         //$scope.snippetUnsafe = $sce.trustAsHtml($scope.snippet);
-        $scope.event = eventData.getEventData().then(
-            //resolve - success
-            function(event) { $scope.event = event; },
-            //reject - fail
-            function(statusCode) { console.log(statusCode); }
+        // $scope.event = eventData.getEventData().then(
+        //     //resolve - success
+        //     function(event) { $scope.event = event; },
+        //     //reject - fail
+        //     function(statusCode) { console.log(statusCode); }
 
-        );
+        // );
 
         
 
