@@ -6,9 +6,11 @@ eventsApp.controller('EventController', ['$scope', '$sce', 'eventData',
 
         $scope.sortorder = 'name';
 
-        $scope.snippet = '<span style="color:red">hi there</span>';
-        $scope.snippetUnsafe = $sce.trustAsHtml($scope.snippet);
-        $scope.event = eventData.event;
+        //$scope.snippet = '<span style="color:red">hi there</span>';
+        //$scope.snippetUnsafe = $sce.trustAsHtml($scope.snippet);
+        $scope.event = eventData.getEventData(function(event) {
+            $scope.event = event;
+        });
 
         
 

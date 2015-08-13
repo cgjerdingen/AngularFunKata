@@ -1,6 +1,20 @@
-eventsApp.factory('eventData', function() {
+eventsApp.factory('eventData', function($http, $log) {
 	return {
-		event: {
+            getEventData: function(successcallback) {
+                $http({method: 'GET', url: '/data/event/1'}).
+                    success(function (data, status, headers, config) {
+                        $log.info(data, status, headers(), config);
+                        successcallback(data)
+                    }).
+                    error(function (data, status, headers, config) {
+                        $log.warn(data, status, headers(), config);
+                    });
+            }
+
+
+
+
+/*		event: {
             name: 'Angular Boot Camp Training Event',
             date: 1420092000000,
             time: '11:20 am',
@@ -40,7 +54,7 @@ eventsApp.factory('eventData', function() {
                     upVoteCount: 0
                 }
             ] //end session array
-        } //end event
+        } //end event*/
 	}; //end return
 });
  
