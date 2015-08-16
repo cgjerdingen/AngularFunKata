@@ -15,12 +15,17 @@
                     <li><a href="EventDetails.html">Events Home</a></li>
                     <li><a href="NewEvent.html">Create Event</a></li>
                     <li><a href="EditProfile.html">Edit Profile</a></li>
+                    <li><a href="EventLocale.html">Event Locale</a></li>
+                    <li><a href="EventCache.html">Cache</a></li>
+                    <li><a href="EventCompile.html">Compile</a></li>
+                    <li><a href="EventTimeout.html">Timeout</a></li>
                 </ul>
             </div>
         </div>
         <!-- Wired to the controller that manages this div -->
         <div ng-controller="EventController">
             <img ng-src="{{event.imageUrl}}" alt="{{event.name}}" style="padding: 0 20px 0 20px;"/>
+            <!-- <button type="button" class="btn btn-primary" ng-click="scrollToSession()">Scroll</button> -->
             <div class="row">
                 <div class="span11">
                     <h2>{{event.name}}</h2>
@@ -58,7 +63,7 @@
             </select>
 
             <ul class="thumbnails">
-                <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query">
+                <li ng-repeat="session in event.sessions | orderBy:sortorder | filter:query" class="span11" id="session{{session.id}}">
 
                     
                     <div class="row session">

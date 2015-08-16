@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 // controller starts with an empty scope
-eventsApp.controller('EventController', ['$scope', '$sce', 'eventData',
+eventsApp.controller('EventController', ['$scope', '$sce', 'eventData', '$anchorScroll',
     function EventController($scope, $sce, eventData) {
 
         $scope.sortorder = 'name';
@@ -33,6 +33,11 @@ eventsApp.controller('EventController', ['$scope', '$sce', 'eventData',
         $scope.downVoteSession = function(session) {
             session.upVoteCount--;
         };
+
+        $scope.scrollToSession = function () {
+            $anchorScroll();
+                
+        }
         
 
     }
