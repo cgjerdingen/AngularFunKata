@@ -17,15 +17,15 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngSanitize', 'ngCook
 			{
 				foo: "bar",
 				templateUrl:'templates/EventDetails.html',
-				controller: 'EventController',
-				resolve: {
-					event: function($route, eventData) {
-						return eventData.getEventData($route.current.pathParams.eventId).$promise;
-					}
-				}	
+				controller: 'EventController'
+				// resolve: {
+				// 	event: function($route, eventData) {
+				// 		return eventData.getEventData($route.current.pathParams.eventId).$promise;
+				// 	}
+				//}	
 			});
 		$routeProvider.otherwise({redirectTo: '/events'});
-		//$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(true);
 	})
 	.factory('myCache', function($cacheFactory) {
 		return $cacheFactory('myCache', {capacity:3});

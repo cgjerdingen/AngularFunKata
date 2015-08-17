@@ -6,13 +6,13 @@ eventsApp.controller('EventController',
 
         $scope.sortorder = 'name';
 
-        $scope.event = $route.current.locale.event;
+        //$scope.event = $route.current.locals.event;
 
-        // eventData.getEventData($routeParams.eventId)
-        //     .$promise.then(
-        //         function(event) { $scope.event = event; console.log(event); },
-        //         function(response) { console.log(response); }
-        //         );
+        $scope.event = eventData.getEventData($routeParams.eventId)
+            .$promise.then(
+                function(event) { $scope.event = event; console.log(event); },
+                function(response) { console.log(response); }
+                );
 
         $scope.reload = function() {
             $route.reload();
