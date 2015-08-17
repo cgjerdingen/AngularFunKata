@@ -1,17 +1,29 @@
 ﻿'use strict';
 
 // controller starts with an empty scope
-eventsApp.controller('EventController', ['$scope', '$sce', 'eventData', '$anchorScroll',
-    function EventController($scope, $sce, eventData) {
+eventsApp.controller('EventController',
+    function EventController($scope, $sce, eventData, $routeParams, $route) {
 
         $scope.sortorder = 'name';
 
-        eventData.getEventData()
-            .$promise.then(
-                function(event) { $scope.event = event; console.log(event); },
-                function(response) { console.log(response); }
-                );
+        $scope.event = $route.current.locale.event;
 
+        // eventData.getEventData($routeParams.eventId)
+        //     .$promise.then(
+        //         function(event) { $scope.event = event; console.log(event); },
+        //         function(response) { console.log(response); }
+        //         );
+
+        $scope.reload = function() {
+            $route.reload();
+        }
+
+
+        console.log($route.current.pathParams.eventId);
+        console.log($route.current.params.eventId);
+        console.log($route.current.params.doo);
+        console.log($route.current.foo);
+        console.log($route.current.params.foo);
         // $scope.event = eventData.getEventData();
 
         //$scope.snippet = '<span style="color:red">hi there</span>';
@@ -41,4 +53,4 @@ eventsApp.controller('EventController', ['$scope', '$sce', 'eventData', '$anchor
         
 
     }
-]);
+);
