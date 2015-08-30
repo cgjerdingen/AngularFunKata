@@ -10,7 +10,8 @@ eventsApp.controller('MainMenuController',
 		// console.log('hash: ', $location.hash());
 		// console.log('url: ', $location.url());
 
-		$scope.createEvent = function() {			
+		$scope.createEvent = function() {
+			//$location.replace();			
 			$location.url('/newEvent');
 		};
 		$scope.eventsHome = function() {			
