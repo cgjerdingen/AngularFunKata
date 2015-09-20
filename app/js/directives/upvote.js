@@ -1,16 +1,16 @@
 'use strict';
 
-eventsApp.directive('upVote', function() {
+eventsApp.directive('upvote', function() {
 	return {
 		restrict: 'E',
-		replace: true, // verse append or inject : don't include the base element
+		replace: true,
 		templateUrl: '/templates/directives/upvote.html',
 		scope: {
-			upvote: "&", // & means execute in parent scope, not this isolate scope
+			upvote: "&",
 			downvote: "&",
 			count: "="
 		}
 	};
 });
-
-
+//replace: true, // verse append or inject : don't include the base element
+//upvote: "&", // & means execute in parent scope, not this isolate scope

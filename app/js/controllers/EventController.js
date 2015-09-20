@@ -10,20 +10,22 @@ eventsApp.controller('EventController',
 
         $scope.event = eventData.getEventData($routeParams.eventId)
             .$promise.then(
-                function(event) { $scope.event = event; console.log(event); },
-                function(response) { console.log(response); }
+                function(event) { 
+                $scope.event = event; //console.log(event); 
+                }//,
+                //function(response) { console.log(response); }
                 );
 
         $scope.reload = function() {
             $route.reload();
-        }
+        };
 
 
-        console.log($route.current.pathParams.eventId);
-        console.log($route.current.params.eventId);
-        console.log($route.current.params.doo);
-        console.log($route.current.foo);
-        console.log($route.current.params.foo);
+        // console.log($route.current.pathParams.eventId);
+        // console.log($route.current.params.eventId);
+        // console.log($route.current.params.doo);
+        // console.log($route.current.foo);
+        // console.log($route.current.params.foo);
         // $scope.event = eventData.getEventData();
 
         //$scope.snippet = '<span style="color:red">hi there</span>';
@@ -49,7 +51,7 @@ eventsApp.controller('EventController',
         $scope.scrollToSession = function () {
             $anchorScroll();
                 
-        }
+        };
         
 
     }

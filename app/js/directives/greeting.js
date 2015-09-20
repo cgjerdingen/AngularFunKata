@@ -1,5 +1,7 @@
 'use strict';
 
+// self contained directive 
+
 eventsApp.directive("greeting", function(){
 	return {
 		restrict: 'E',
