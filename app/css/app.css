@@ -3,6 +3,9 @@
   background-color: #52575c;
   cursor: pointer;
 }
+.linkwell:hover {
+  cursor: pointer;
+}
 select, textarea {
   color: #52575c;
 }

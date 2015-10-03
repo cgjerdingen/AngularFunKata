@@ -8,7 +8,7 @@ eventsApp.directive('dateKeys', function() {
 				if (isNumericKeyCode(event.keyCode) || isForwardSlashKeyCode(event.keyCode) || isNavigationKeyCode(event.keyCode)) {
 					return true;
 				}
-				alert(event.keyCode);
+				//alert(event.keyCode);
 				return false;
 			});
 		}
