@@ -29,6 +29,12 @@ describe('event registration app', function() {
 			var titleElement = list.first().element(by.binding('title'));
 			expect(titleElement.getText()).toEqual('Directives Masterclass');
 		});
+
+		it('Should have 3 sessions', function() {
+			var list = element.all(by.repeater('session in event.sessions'));
+			
+			expect(list.count()).toEqual(3);
+		});
 	});
 
 });
