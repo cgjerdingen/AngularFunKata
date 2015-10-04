@@ -8,7 +8,7 @@ module.exports = function(config){
       'app/lib/angular/angular-*.js',
       'test/lib/angular-mocks.js',
       'test/lib/sinon-1.10.2.js',
-      'app/js/**/*.js',
+      //'app/js/**/*.js',
       'test/unit/**/*.js'
     ],
 
