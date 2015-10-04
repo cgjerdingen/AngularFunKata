@@ -35,6 +35,15 @@ describe('event registration app', function() {
 			
 			expect(list.count()).toEqual(3);
 		});
+
+		it('Should have 1 session when Introductory Level is chosen', function()
+		{
+			var selectElement = element(by.model('query.level'));
+			selectElement.element(by.cssContainingText('option', 'Introductory')).click();
+			var list = element.all(by.repeater('session in event.sessions'));
+			
+			expect(list.count()).toEqual(1);
+		});
 	});
 
 });
