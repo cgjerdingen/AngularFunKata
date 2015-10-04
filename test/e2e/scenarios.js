@@ -36,6 +36,7 @@ describe('event registration app', function() {
 			expect(list.count()).toEqual(3);
 		});
 
+		//Testing Filter
 		it('Should have 1 session when Introductory Level is chosen', function()
 		{
 			var selectElement = element(by.model('query.level'));
@@ -44,6 +45,13 @@ describe('event registration app', function() {
 			
 			expect(list.count()).toEqual(1);
 		});
+
+		it('Should increment a vote total with an upvote is clicked', function() {
+			element.all(by.deepCss('div.votingButton')).first().click();
+			var firstVoteCount = element.all(by.binding('count')).first();
+			expect(firstVoteCount.getText()).toEqual('1');
+		})
+
 	});
 
 });
