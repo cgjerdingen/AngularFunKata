@@ -82,6 +82,16 @@ var eventsApp = angular.module('eventsApp', ['ngResource', 'ngRoute'])
                     }
                 }
             });
+        $routeProvider.when('/editProfile', 
+            {
+                templateUrl: '/templates/EditProfile.html', 
+                controller: 'EditProfileController'
+            });
+        $routeProvider.when('/eventLocale', 
+            {
+                templateUrl: '/templates/eventLocale.html', 
+                controller: 'EventLocaleController'
+            });
         $routeProvider.when('/sampleDirective',
             {
                 templateUrl: 'templates/SampleDirective.html',

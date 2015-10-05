@@ -1,0 +1,20 @@
+<!-- Wired to the controller that manages this div -->
+        <div ng-controller="EventLocaleController" style="padding:20px;">
+            <h3>{{ myDate | date:myFormat }}</h3>
+           
+
+        </div>
+        <div ng-controller="EventFilterController" style="padding:20px;">
+            Duration 1: {{data.duration1}}<br />
+            Duration 2: {{data.duration2}}<br />
+            Duration 3: {{data.duration3}}<br />
+            Duration 4: {{data.duration4}}<br />
+           
+
+        </div>
+
+        <div ng-controller="EventCookieController" style="padding:20px;">
+            <button class="btn" ng-click="saveEventToCookie(event)">Store Event Cookie</button>
+            <button class="btn" ng-click="getEventFromCookie()">Get Event Cookie</button>
+            <button class="btn" ng-click="removeEventCookie()">Remove Event Cookie</button>
+        </div>

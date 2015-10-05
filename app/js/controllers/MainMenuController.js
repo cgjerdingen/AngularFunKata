@@ -17,4 +17,10 @@ eventsApp.controller('MainMenuController',
 		$scope.eventsHome = function() {			
 			$location.url('/events');
 		};
+		$scope.editProfile = function() {
+			$location.url('/editProfile');
+		};
+		$scope.eventLocale = function() {
+			$location.url('/eventLocale');
+		}
 	});
